@@ -1,5 +1,3 @@
-const vaultTest = require("./data");
-// data
 const vault = {
   actions: {
     attack: {
@@ -1271,8 +1269,8 @@ const renderSkillPyramid = (skills) => {
     const prevSkill = sortedArray[i - 1];
     const classes = ["skill", skillName, `r${baseSkillValue}`];
     const options = {
-      onmouseover: "hover(event)",
-      onmouseleave: "hoverOff(event)",
+      onmouseover: hover,
+      onmouseleave: hoverOff,
       onclick: "",
       value: baseSkillValue,
     };
@@ -1304,7 +1302,7 @@ const renderCharacterButtons = (characters) => {
   });
 };
 renderCharacterButtons(state.characters);
-renderCharacter(state.characters[2], 2);
+renderCharacter(state.characters[0], 0);
 
 // wiz funcs
 const clickSpec = (e) => {

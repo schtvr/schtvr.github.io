@@ -7,23 +7,11 @@
   <link rel="icon" href="https://glitch.com/favicon.ico" />
   <title>Hello World!</title>
 
-  <!-- Meta tags for SEO and social sharing -->
-  <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-  <meta name="description" content="A simple website, built with Glitch. Remix it to get your own." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Hello World!" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-  <meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own." />
-  <meta property="og:image"
-    content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147" />
-  <meta name="twitter:card" content="summary" />
-
   <!-- Import the webpage's stylesheet -->
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" type="text/css" href="/style.css" />
 
   <!-- Import the webpage's javascript file -->
-  <script src="/script.js" defer></script>
+  <script src="/script.js" type="module" defer></script>
 </head>
 
 <body>
@@ -219,7 +207,35 @@
             <div class="console-header">header</div>
             <div class="console-body">body</div>
             <div class="roll-container"></div>
-            <div class="chat">chat</div>
+            <div class="chat">
+              <ul id="messages"></ul>
+              <form id="form" action="">
+                <input id="input" autocomplete="off" /><button>Send</button>
+              </form>
+              <script src="/socket.io/socket.io.js"></script>
+              <script>
+                var socket = io();
+
+                var messages = document.getElementById('messages');
+                var form = document.getElementById('form');
+                var input = document.getElementById('input');
+
+                form.addEventListener('submit', function (e) {
+                  e.preventDefault();
+                  if (input.value) {
+                    socket.emit('chat message', input.value);
+                    input.value = '';
+                  }
+                });
+
+                socket.on('chat message', function (msg) {
+                  var item = document.createElement('li');
+                  item.textContent = msg;
+                  messages.appendChild(item);
+                  window.scrollTo(0, document.body.scrollHeight);
+                });
+              </script>
+            </div>
           </div>
         </div>
       </div>
