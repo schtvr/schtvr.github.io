@@ -481,3 +481,6 @@ select {
 .btn:hover {
   border-bottom:2px solid black;
 }
+#form{
+  width:100%;
+}

@@ -961,6 +961,30 @@ const clickNewChar = () => {
   document.querySelector(".wrapper").classList.toggle("hidden");
   document.querySelector(".wizard").classList.toggle("hidden");
 };
+const chatHandler = () => {
+  var socket = io();
+  console.log('poggers')
+  console.log(socket)
+
+  var messages = document.getElementById('messages');
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  });
+
+  socket.on('chat message', function (msg) {
+    var item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+}
 
 // wiz funcs
 const revealWizSpecs = () => {
@@ -1303,6 +1327,7 @@ const renderCharacterButtons = (characters) => {
 };
 renderCharacterButtons(state.characters);
 renderCharacter(state.characters[0], 0);
+chatHandler();
 
 // wiz funcs
 const clickSpec = (e) => {
