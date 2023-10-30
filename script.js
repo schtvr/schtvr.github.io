@@ -1,3 +1,4 @@
+// data
 const vault = {
   actions: {
     attack: {
@@ -828,10 +829,10 @@ const hover = (e) => {
           // hydrate console body text
           const modifier = ef.effect >= 0 ? `+${ef.effect}` : ef.effect;
           const res = `effect: ${ef.skill} ${ef.action}: ${modifier}
-
-        ${ef.description}
-
-        channel: ${ef.channel}`;
+          
+          ${ef.description}
+          
+          channel: ${ef.channel}`;
           return res;
         });
         updateConsole(title, body);
@@ -1225,7 +1226,7 @@ const renderCharacterBlock = (name, specialty, aspects) => {
 };
 const renderStuntsBlock = (stunts) => {
   const dest = document.querySelector(".stunt-btn-container");
-
+  clearParent(dest);
   const classes = ["stunt-btn", "btn"];
   stunts.forEach((stunt) => {
     const options = {
@@ -1269,8 +1270,8 @@ const renderSkillPyramid = (skills) => {
     const prevSkill = sortedArray[i - 1];
     const classes = ["skill", skillName, `r${baseSkillValue}`];
     const options = {
-      onmouseover: hover,
-      onmouseleave: hoverOff,
+      onmouseover: "hover(event)",
+      onmouseleave: "hoverOff(event)",
       onclick: "",
       value: baseSkillValue,
     };
@@ -1302,7 +1303,7 @@ const renderCharacterButtons = (characters) => {
   });
 };
 renderCharacterButtons(state.characters);
-renderCharacter(state.characters[0], 0);
+renderCharacter(state.characters[2], 2);
 
 // wiz funcs
 const clickSpec = (e) => {

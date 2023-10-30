@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Active Page</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <div class="body">
+        <div class="wrapper">
+            <div class="top">
+                <div class="col-1 col">
+                    <div class="hero-list">
+                        <div class="new-char-btn character-button" style="padding: 0 1rem" onclick="clickNewChar()">
+                            +
+                        </div>
+                    </div>
+                    <div class="char-container">
+                        <h1 class="char-name">name</h1>
+                        <p class="char-specialty">specialty</p>
+                        <div class="divider"></div>
+                        <p>aspects:</p>
+                        <div class="char-container__aspects"></div>
+                    </div>
+                    <div class="stunts-container">stunts:
+
+                        <div class="stunt-btn-container"></div>
+                        <div class="stunts-reset-btn btn">reset</div>
+                    </div>
+                    <div class="skill-pyramid-container">
+                        <div class="skill-pyramid-row"></div>
+                        <div class="skill-pyramid-row"></div>
+                        <div class="skill-pyramid-row"></div>
+                        <div class="skill-pyramid-row"></div>
+                    </div>
+                    <div class="action-table">
+                        <div class="table-header-container">
+                            <div class="table-header"></div>
+                            <div class="table-header">attack</div>
+                            <div class="table-header">defend</div>
+                            <div class="table-header">overcome</div>
+                            <div class="table-header">support</div>
+                        </div>
+                        <div class="action-row agility">
+                            <div class="action-name agility">agility</div>
+                            <div class="action attack agility">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend agility">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome agility">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support agility">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row brawl">
+                            <div class="action-name brawl">brawl</div>
+                            <div class="action attack brawl">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend brawl">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome brawl">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support brawl">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row contacts">
+                            <div class="action-name contacts">contacts</div>
+                            <div class="action attack contacts">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend contacts">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome contacts">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support contacts">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row insight">
+                            <div class="action-name insight">insight</div>
+                            <div class="action attack insight">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend insight">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome insight">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support insight">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row operate">
+                            <div class="action-name operate">operate</div>
+                            <div class="action attack operate">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend operate">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome operate">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support operate">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row perform">
+                            <div class="action-name perform">perform</div>
+                            <div class="action attack perform">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend perform">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome perform">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support perform">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row persuade">
+                            <div class="action-name persuade">persuade</div>
+                            <div class="action attack persuade">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend persuade">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome persuade">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support persuade">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row physique">
+                            <div class="action-name physique">physique</div>
+                            <div class="action attack physique">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend physique">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome physique">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support physique">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row shoot">
+                            <div class="action-name shoot">shoot</div>
+                            <div class="action attack shoot">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend shoot">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome shoot">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support shoot">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                        <div class="action-row stealth">
+                            <div class="action-name stealth">stealth</div>
+                            <div class="action attack stealth">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action defend stealth">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action overcome stealth">
+                                <button class="action-roll"></button>
+                            </div>
+                            <div class="action support stealth">
+                                <button class="action-roll"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 col">
+                    <div class="console">
+                        <div class="console-header">header</div>
+                        <div class="console-body">body</div>
+                        <div class="roll-container"></div>
+                        <div class="chat">chat</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="description-box"></div>
+                <div class="volley-box"></div>
+            </div>
+        </div>
+        <div class="wizard hidden">
+            <div class="wizard-container container">
+                <div class="header-row">
+                    <div class="name-input-container container">
+                        <div class="name-spec">
+                            <input type="text" class="char-name-input" placeholder="character name" />
+                        </div>
+                        <div class="char-name-input-next-btn btn" onclick="clickWizNameNext()">
+                            next
+                        </div>
+                    </div>
+                </div>
+                <div class="wiz-specialization-container container wiz-hidden">
+                    <div class="specializations"></div>
+                    <div class="wiz-console wiz-spec"></div>
+                </div>
+                <div class="wiz-skill-pyramid-container container wiz-hidden">
+                    <div class="wiz-skill-input-area">
+                        <ul class="wiz-skill-bank" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <li class="skill-draggable wiz-skills" id="wiz-agility" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                agility
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-brawl" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                brawl
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-contacts" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                contacts
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-insight" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                insight
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-operate" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                operate
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-perform" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                perform
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-persuade" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                persuade
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-physique" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                physique
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-shoot" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                shoot
+                            </li>
+                            <li class="skill-draggable wiz-skills" id="wiz-stealth" draggable="true"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" ondragstart="drag(event)">
+                                stealth
+                            </li>
+                        </ul>
+                        <div class="wiz-skill-pyramid">
+                            <ul id="wiz-pyramid-3">
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                            </ul>
+                            <ul id="wiz-pyramid-2">
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                            </ul>
+                            <ul id="wiz-pyramid-1">
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                            </ul>
+                            <ul id="wiz-pyramid--1">
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                                <li class="skill-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wiz-console wiz-skills"></div>
+                </div>
+                <div class="wiz-aspect-container container wiz-hidden">
+                    <div class="wiz-aspect-name-catcher"></div>
+                    <div class="wiz-aspect-input-area-container">
+                        <div class="wiz-aspect-input-area container">
+                            <div class="wiz-aspect-header">
+                                <div class="ind-aspect-header" style="padding: 0 0.5rem">
+                                    create an aspect:
+                                </div>
+                                <div class="aspect-help wiz-aspects" onmouseover="hover(event)"
+                                    onmouseleave="hoverOffWiz(event)">
+                                    ?
+                                </div>
+                            </div>
+                            <input type="text" class="aspect-title wiz-aspects" placeholder="aspect name" maxlength="72"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <input type="text" class="aspect-desc-brief wiz-aspects" placeholder="brief description"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose +2 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>channel:</option>
+                                    <option value="elemental">elemental</option>
+                                    <option value="organic">organic</option>
+                                    <option value="quantum">quantum</option>
+                                    <option value="psychic">psychic</option>
+                                    <option value="tech">tech</option>
+                                    <option value="soul">soul</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose -1 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-btn-container">
+                                <div class="wiz-btn wiz-aspect-clear" onclick="clickWizClearAspect()"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    -
+                                </div>
+                                <div class="wiz-btn wiz-aspect-confirm" onclick="clickWizAddAspect(event)"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wiz-aspect-input-area container">
+                            <div class="wiz-aspect-header">
+                                <div class="ind-aspect-header" style="padding: 0 0.5rem">
+                                    create an aspect:
+                                </div>
+                                <div class="aspect-help wiz-aspects" onmouseover="hover(event)"
+                                    onmouseleave="hoverOffWiz(event)">
+                                    ?
+                                </div>
+                            </div>
+                            <input type="text" class="aspect-title wiz-aspects" placeholder="aspect name" maxlength="72"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <input type="text" class="aspect-desc-brief wiz-aspects" placeholder="brief description"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose +2 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>channel:</option>
+                                    <option value="elemental">elemental</option>
+                                    <option value="organic">organic</option>
+                                    <option value="quantum">quantum</option>
+                                    <option value="psychic">psychic</option>
+                                    <option value="tech">tech</option>
+                                    <option value="soul">soul</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose -1 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-btn-container">
+                                <div class="wiz-btn wiz-aspect-clear" onclick="clickWizClearAspect()"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    -
+                                </div>
+                                <div class="wiz-btn wiz-aspect-confirm" onclick="clickWizAddAspect(event)"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wiz-aspect-input-area container">
+                            <div class="wiz-aspect-header">
+                                <div class="ind-aspect-header" style="padding: 0 0.5rem">
+                                    create an aspect:
+                                </div>
+                                <div class="aspect-help wiz-aspects" onmouseover="hover(event)"
+                                    onmouseleave="hoverOffWiz(event)">
+                                    ?
+                                </div>
+                            </div>
+                            <input type="text" class="aspect-title wiz-aspects" placeholder="aspect name" maxlength="72"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <input type="text" class="aspect-desc-brief wiz-aspects" placeholder="brief description"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose +2 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>channel:</option>
+                                    <option value="elemental">elemental</option>
+                                    <option value="organic">organic</option>
+                                    <option value="quantum">quantum</option>
+                                    <option value="psychic">psychic</option>
+                                    <option value="tech">tech</option>
+                                    <option value="soul">soul</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose -1 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-btn-container">
+                                <div class="wiz-btn wiz-aspect-clear" onclick="clickWizClearAspect()"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    -
+                                </div>
+                                <div class="wiz-btn wiz-aspect-confirm" onclick="clickWizAddAspect(event)"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wiz-aspect-input-area container">
+                            <div class="wiz-aspect-header">
+                                <div class="ind-aspect-header" style="padding: 0 0.5rem">
+                                    create an aspect:
+                                </div>
+                                <div class="aspect-help wiz-aspects" onmouseover="hover(event)"
+                                    onmouseleave="hoverOffWiz(event)">
+                                    ?
+                                </div>
+                            </div>
+                            <input type="text" class="aspect-title wiz-aspects" placeholder="aspect name" maxlength="72"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <input type="text" class="aspect-desc-brief wiz-aspects" placeholder="brief description"
+                                onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose +2 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>channel:</option>
+                                    <option value="elemental">elemental</option>
+                                    <option value="organic">organic</option>
+                                    <option value="quantum">quantum</option>
+                                    <option value="psychic">psychic</option>
+                                    <option value="tech">tech</option>
+                                    <option value="soul">soul</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-aspect-effect-container" style="padding-left: 0.5rem">
+                                choose -1 effect:
+                                <select type="text" class="wiz-action">
+                                    <option value="" disabled selected hidden>skill:</option>
+                                    <option value="agility">agility</option>
+                                    <option value="brawl">brawl</option>
+                                    <option value="contacts">contacts</option>
+                                    <option value="insight">insight</option>
+                                    <option value="operate">operate</option>
+                                    <option value="perform">perform</option>
+                                    <option value="persuade">persuade</option>
+                                    <option value="physique">physique</option>
+                                    <option value="shoot">shoot</option>
+                                    <option value="stealth">stealth</option>
+                                </select>
+                                <select type="text" class="wiz-skill">
+                                    <option value="" disabled selected hidden>action:</option>
+                                    <option value="attack">attack</option>
+                                    <option value="defend">defend</option>
+                                    <option value="overcome">overcome</option>
+                                    <option value="support">support</option>
+                                </select>
+                            </div>
+                            <input type="text" class="aspect-desc-secondary wiz-aspects" onmouseover="hover(event)"
+                                onmouseleave="hoverOffWiz(event)" placeholder="effect description" />
+                            <div class="wiz-btn-container">
+                                <div class="wiz-btn wiz-aspect-clear" onclick="clickWizClearAspect()"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    -
+                                </div>
+                                <div class="wiz-btn wiz-aspect-confirm" onclick="clickWizAddAspect(event)"
+                                    onmouseover="hover(event)" onmouseleave="hoverOffWiz(event)">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wiz-console wiz-aspects"></div>
+                </div>
+                <div class="wiz-btns">
+                    <div class="wiz-btn btn back" onclick="wizBtnClick(event)">
+                        back
+                    </div>
+                    <div class="wiz-btn btn wiz-hidden next" onclick="wizBtnClick(event)">
+                        next
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
